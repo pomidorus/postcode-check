@@ -7,7 +7,7 @@
 <div id="postcode">
   <p v-if="message.match('is allowed')" style="color: green;">{{ message }}</p>
   <p v-else style="color: red;">{{ message }}</p>
-  <input v-model="postcode">
+  <input id="postcode" v-model="postcode">
   <button v-on:click="checkPostcode">Check Postcode</button>
 </div>
 
