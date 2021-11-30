@@ -12,5 +12,10 @@ end
 get '/postcode/check' do
   return 'No postcode provided' if params['pc'].empty?
 
-  API::PostcodesService.new.check(params['pc'])
+  pio = Postcodes::IO.new
+  lsoa_checker = LsoaCheckerService.new
+  postcode_checker = PostcodeCheckerService.new
+
+  service = API::PostcodesService.new(pio, lsoa_checker, postcode_checker)
+  service.check(params['pc'])
 end

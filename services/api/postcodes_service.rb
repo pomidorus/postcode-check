@@ -4,19 +4,19 @@ require 'postcodes_io'
 
 module API
   class PostcodesService
-    attr_reader :pio, :lsoa_checker, :postcodes_checker
+    attr_reader :pio, :lsoa_checker, :postcode_checker
 
-    def initialize()
-      @pio = Postcodes::IO.new
-      @lsoa_checker = LsoaCheckerService.new
-      @postcodes_checker = PostcodesCheckerService.new
+    def initialize(pio, lsoa_checker, postcode_checker)
+      @pio = pio
+      @lsoa_checker = lsoa_checker
+      @postcode_checker = postcode_checker
     end
 
     def check(postcode)
       pc = pio.lookup(postcode)
 
       if pc.nil?
-        return postcodes_checker.check(postcode) ? "#{postcode} is allowed" : 'No postcode found'
+        return postcode_checker.check(postcode) ? "#{postcode} is allowed" : 'No postcode found'
       end
 
       lsoa_checker.check(pc.lsoa) ? "#{postcode} is allowed" : "#{postcode} not allowed"
