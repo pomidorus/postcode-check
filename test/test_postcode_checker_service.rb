@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative '../services/postcodes_checker_service'
+require_relative '../services/postcode_checker_service'
 require 'test/unit'
 
-class TestPostcodesCheckerService < Test::Unit::TestCase
+class TestPostcodeCheckerService < Test::Unit::TestCase
   def initialize(test)
     super
-    @service = PostcodesCheckerService.new
+    @service = PostcodeCheckerService.new
   end
 
   def test_check_lsoa

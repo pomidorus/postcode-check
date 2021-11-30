@@ -3,7 +3,7 @@
 require 'sinatra'
 require './services/api/postcodes_service'
 require './services/lsoa_checker_service'
-require './services/postcodes_checker_service'
+require './services/postcode_checker_service'
 
 get '/' do
   erb :index

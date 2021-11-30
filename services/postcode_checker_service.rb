@@ -1,4 +1,4 @@
-class PostcodesCheckerService
+class PostcodeCheckerService
   ALLOWED_POSTCODES = %w[SH241AA SH241AB].freeze
 
   def check(postcode)
