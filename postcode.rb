@@ -3,5 +3,9 @@
 require 'sinatra'
 
 get '/' do
-  "postcode check"
+  erb :index
+end
+
+get '/postcode/check' do
+  'checked'
 end
