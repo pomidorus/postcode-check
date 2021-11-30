@@ -2,10 +2,11 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <h1>Hello Postcode Checker</h1>
-<h3>Check it</h3>
+<h3>Validate you postcode</h3>
 
 <div id="postcode">
-  <p>{{ message }}</p>
+  <p v-if="message.match('is allowed')" style="color: green;">{{ message }}</p>
+  <p v-else style="color: red;">{{ message }}</p>
   <input v-model="postcode">
   <button v-on:click="checkPostcode">Check Postcode</button>
 </div>

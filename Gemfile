@@ -8,3 +8,5 @@ gem 'thin'
 
 gem 'rake'
 gem 'test-unit'
+
+gem 'postcodes_io'
