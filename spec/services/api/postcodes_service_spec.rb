@@ -3,7 +3,7 @@
 require_relative '../../spec_helper'
 
 RSpec.describe API::PostcodesService do
-  let(:pio) { Postcodes::IO.new }
+  let(:pio) { API::PostcodesIO.new }
   let(:lsoa_checker) { LsoaCheckerService.new }
   let(:postcode_checker) { PostcodeCheckerService.new }
   let(:service) { API::PostcodesService.new(pio, lsoa_checker, postcode_checker) }

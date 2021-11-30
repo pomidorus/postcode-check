@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'postcodes_io'
-
 module API
   class PostcodesService
     attr_reader :pio, :lsoa_checker, :postcode_checker

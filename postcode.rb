@@ -2,6 +2,7 @@
 
 require 'sinatra'
 require './services/api/postcodes_service'
+require './services/api/postcodes_io'
 require './services/lsoa_checker_service'
 require './services/postcode_checker_service'
 
@@ -13,7 +14,7 @@ class PostcodesValidator < Sinatra::Base
   get '/postcode/check' do
     return 'No postcode provided' if params['pc'].empty?
 
-    pio = Postcodes::IO.new
+    pio = API::PostcodesIO.new
     lsoa_checker = LsoaCheckerService.new
     postcode_checker = PostcodeCheckerService.new
 

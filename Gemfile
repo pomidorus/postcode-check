@@ -2,16 +2,15 @@
 
 source 'https://rubygems.org'
 
+gem 'excon'
 gem 'rerun'
 gem 'sinatra'
 gem 'thin'
 
 gem 'capybara'
+gem 'puma'
 gem 'rack-test'
 gem 'rake'
 gem 'rspec'
-gem 'test-unit'
 gem 'selenium-webdriver'
-gem 'puma'
-
-gem 'postcodes_io'
+gem 'test-unit'
